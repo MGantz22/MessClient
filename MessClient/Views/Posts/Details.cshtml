@@ -1,0 +1,10 @@
+@{
+  ViewData["Title"] = $"Details for {Model.MessageName}";
+}
+
+<h1>All About @Model.MessageName</h1>
+
+<p>Date/Time: @Model.Date</p>
+
+
+@Html.ActionLink("Return to all Messages", "Index")
