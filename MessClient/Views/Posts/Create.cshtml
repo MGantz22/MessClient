@@ -1,0 +1,23 @@
+@{
+  ViewData["Title"] = "Create Post";
+}
+
+@model MessClient.Models.Post
+
+<h4>Add a new Post</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.MessageName)
+  @Html.TextBoxFor(model => model.MessageName)
+  <br>
+  @Html.LabelFor(model => model.MessageBody)
+  @Html.TextBoxFor(model => model.MessageBody)
+  <br>
+
+  <br>
+  <input type="submit" value="Add new post" class="btn btn-primary"/>
+}
+
+<br>
+<p>@Html.ActionLink("Back to all Posts", "Index")</p>
