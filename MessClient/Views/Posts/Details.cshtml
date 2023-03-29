@@ -7,4 +7,6 @@
 <p>Date/Time: @Model.Date</p>
 
 
-@Html.ActionLink("Return to all Messages", "Index")
+<p>@Html.ActionLink("Edit details", "Edit", new { id = @Model.PostId })</p>
+<p>@Html.ActionLink("Delete post", "Delete", new { id = @Model.PostId })</p>
+<p>@Html.ActionLink("Return to all Messages", "Index")</p>
