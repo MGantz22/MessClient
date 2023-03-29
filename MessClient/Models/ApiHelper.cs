@@ -5,6 +5,49 @@ namespace MessClient.Models
 {
   public class ApiHelper
   {
+
+// // Create a RestSharp client instance and set the API endpoint URL
+// var client = new RestClient("https://example.com/api");
+
+// // Create a RestRequest object for the POST request
+// var request = new RestRequest(Method.POST);
+
+// // Specify the request body data as form data
+// request.AddParameter("name", "John");
+// request.AddParameter("age", 30);
+
+// // Execute the request and get the response
+// var response = client.Execute(request);
+
+// _______________________________________
+
+// // Create a RestSharp client instance and set the API endpoint URL
+// var client = new RestClient("https://example.com/api");
+
+// // Create a RestRequest object for the POST request
+// var request = new RestRequest(Method.POST);
+
+// // Specify the request body data as a JSON object
+// var bodyData = new { name = "John", age = 30 };
+// request.AddJsonBody(bodyData);
+
+// // Execute the request and get the response
+// var response = client.Execute(request);
+
+// ________________________________________
+
+
+
+    public static async Task<string> LogIn(string username, string passWord)
+    {
+      RestClient client = new RestClient("http://localhost:7201/");
+      RestRequest request = new RestRequest($"api/logins", Method.Post);
+      // request.AddParameter("UserName", $"{userName}");
+      // request.AddParameter("Password", $"{passWord}");
+      var bodyData = new { userName = $"{username}", password = $"{passWord}"};
+      RestResponse response = await client.ExecuteAsync(request);
+      return response.Content;
+    }
     public static async Task<string> GetAll()
     {
       RestClient client = new RestClient("http://localhost:7201/");
