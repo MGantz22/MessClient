@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+<h1> Log In: </h1>
+
+<form method = "post">
+  User name:
+  @Html.TextBox("username")
+  <br>
+  Password:
+  @Html.TextBox("passWord")
+  <br>
+  <input type="submit" value="Log in" class="btn btn-primary"/>
+</form>
