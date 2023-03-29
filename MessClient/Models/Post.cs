@@ -42,5 +42,22 @@ namespace MessClient.Models
 
     }
 
+    public static void Posted(Post posts)
+    {
+      string jsonPost = JsonConvert.SerializeObject(posts);
+      ApiHelper.Post(jsonPost);
+    }
+
+  public static void Put(Post post)
+    {
+      string jsonPost = JsonConvert.SerializeObject(post);
+      ApiHelper.Put(post.PostId, jsonPost);
+    }
+
+      public static void Delete(int id)
+    {
+      ApiHelper.Delete(id);
+    }
+
   }
 }
