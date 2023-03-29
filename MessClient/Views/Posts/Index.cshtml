@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Posts";
+}
+
+<h1>All posts:</h1>
+
+<ol>
+@foreach (Post post in Model)
+{
+  <li><strong>@post.MessageName</strong> the @post.MessageBody | <a href="/Messages/Details/@(post.PostId)">View Details</a></li>
+}
+</ol>
